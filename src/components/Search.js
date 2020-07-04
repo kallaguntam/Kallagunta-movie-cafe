@@ -20,12 +20,13 @@ const Search = ({ search }) => {
   return (
     <form className="search">
       <input
+        style={{borderRadius:"10px"}}
         value={searchValue}
         onChange={handleSearchInputChanges}
         type="text"
       />
 
-      <input onClick={callSearchFunction} type="submit" value="SEARCH" />
+      <input style={{borderRadius:"10px"}} onClick={callSearchFunction} type="submit" value="SEARCH" />
     </form>
   );
 };

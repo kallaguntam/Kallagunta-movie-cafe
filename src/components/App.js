@@ -7,7 +7,7 @@ import Search from "./Search";
 import { initialState, reducer } from "../store/reducer";
 import axios from "axios";
 
-const MOVIE_API_URL = "https://www.omdbapi.com/?s=man&apikey=4a3b711b";
+const MOVIE_API_URL = "https://www.omdbapi.com/?s=man&apikey=b9bd48a6";
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -31,7 +31,7 @@ const App = () => {
       type: "SEARCH_MOVIES_REQUEST"
     });
 
-    axios(`https://www.omdbapi.com/?s=${searchValue}&apikey=4a3b711b`).then(
+    axios(`https://www.omdbapi.com/?s=${searchValue}&apikey=b9bd48a6`).then(
       jsonResponse => {
         if (jsonResponse.data.Response === "True") {
           dispatch({
@@ -64,11 +64,11 @@ const App = () => {
   return (
     <div className="App">
       <div className="m-container">
-        <Header text="HOOKED" />
+        <Header text="Kallagunta Movie Cafe" />
 
         <Search search={search} />
 
-        <p className="App-intro">Sharing a few of our favourite movies</p>
+        <p className="App-intro">Movies List</p>
 
         <div className="movies">{retrievedMovies}</div>
       </div>
